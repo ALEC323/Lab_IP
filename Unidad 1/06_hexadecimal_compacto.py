@@ -1,7 +1,8 @@
-numero,hexadecimal= 10, ""
-if numero == 0: print(0)
+hexadecimal,numero = "",12
+if numero == 0: hexadecimal = "0"
 while numero > 0:
-    numero = numero // 16    
-    hexadecimal = str(numero % 16) + hexadecimal
-    numero = numero // 16    
-print(hexadecimal)  
+    residuo = numero % 16
+    hexadecimal = (ABCDEF [residuo - 10] if residuo >= 10 else str(residuo)) + hexadecimal
+    numero //= 16
+print(hexadecimal)
+
